@@ -50,14 +50,14 @@ Runs a board using CSP automatically (no user input). Can load a level by modify
 The Sudoku solver provides an interactive experience through a Tkinter GUI, where users can observe the algorithm's process, with visual cues indicating valid or invalid moves. It displays important metrics such as time taken, recursive calls, and iterations, helping users track the algorithm’s progress.
 
 **Program Operation:** \
-Same operation as above programs, although cannot load preset level.
+Same operation as above programs, although cannot load preset level. Note: If the user does not include enough numbers, the program may run into a memory issue (due to large constraints of memory and redundant iterations). Best seen with a large amount of manual inputs. 
 
 **Command to run the file:**\
 ```python visualizer_Brute_Force.py```
 
 ### 5) visualizer_MRV.py
 **Program Structure:**
-Similar to the visualizer.py program above, although uses the Minimum Remaining Values variable selection ordering to improve operation and efficiency. Can also be used with a preset level.
+Similar to the visualizer.py program above, although uses the Minimum Remaining Values variable selection ordering to improve operation and efficiency. Can also be used with a preset level. Works well with medium.json to illustrate process without running into memory constraints.
 
 **Program Operation:** \
 Same operation as above program, and allows user to pass in preset level.
