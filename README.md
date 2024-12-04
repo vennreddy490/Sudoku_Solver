@@ -39,4 +39,4 @@ The Sudoku solver provides an interactive experience through a Tkinter GUI, wher
 Command to run the file: "python sudoku_solver.py"
 
 # 4) sudoku_solver_comparision
-Gives the comparision between the algorithms like AC-3 and Backtracking in terms of efficiency.
+AC-3 (Arc Consistency 3) ensures arc consistency in constraint satisfaction problems by iteratively pruning variable domains. It checks all arcs, removing values from a variable's domain that are inconsistent with connected variables, and propagates changes to related arcs. Forward checking, used during backtracking, removes inconsistent values from connected variables' domains as a variable is assigned. While forward checking is a more localized method that prunes during assignment, AC-3 performs global constraint propagation before assignments, offering stronger pruning and potentially reducing search space more effectively.
