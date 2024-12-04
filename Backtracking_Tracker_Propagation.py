@@ -263,40 +263,12 @@ def plot_results(metrics_list):
     ax.bar(x - width, width, label="Execution Time (s)")
     ax.bar(x, iterations, width, label="Iterations")
     ax.set_xlabel("Algorithms")
-    ax.set_ylabel("Metrics")
+    ax.set_ylabel("Iterations")
     ax.set_title("Comparison of CSP with Forward Checking vs Backtracking")
     ax.set_xticks(x)
     ax.set_xticklabels(algorithms)
     plt.show()
 
-    def plot_iteration_frequency(self, timestamps):
-        """Plot the frequency of iterations over time."""
-        if len(timestamps) < 2:
-            messagebox.showinfo("Sudoku Solver", "Not enough data to plot!")
-            return
-        time_differences = [t - timestamps[0] for t in timestamps]
-        plt.figure(figsize=(10, 6))
-        plt.plot(time_differences, range(len(time_differences)), marker='o')
-        plt.xlabel('Time (seconds since start)')
-        plt.ylabel('Iteration Count')
-        plt.title('Frequency of Iterations Over Time')
-        plt.grid()
-        plt.show()
-
-    def plot_backtrack_frequency(self, backtrack_timestamps):
-        """Plot the frequency of backtracking events over time."""
-        if len(backtrack_timestamps) < 2:
-            messagebox.showinfo("Sudoku Solver", "Not enough data to plot backtracks!")
-            return
-        backtrack_differences = [t - backtrack_timestamps[0] for t in backtrack_timestamps]
-        plt.figure(figsize=(10, 6))
-        plt.plot(backtrack_differences, range(len(backtrack_differences)), marker='x', label='Backtracks')
-        plt.xlabel('Time (seconds since first backtrack)')
-        plt.ylabel('Backtrack Count')
-        plt.title('Frequency of Backtracking Events Over Time')
-        plt.legend()
-        plt.grid()
-        plt.show()
 
 if __name__ == "__main__":
     # Example Sudoku boards for testing
@@ -315,7 +287,7 @@ if __name__ == "__main__":
     # Run tests for both algorithms
     results = []
     results.append(solve_using_metrics("CSP", board_1))
-    # results.append(solve_using_metrics("Backtracking", board_1))
+    results.append(solve_using_metrics("Backtracking", board_1))
 
     # Print results as a table
     table = PrettyTable()
